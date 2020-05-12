@@ -45,19 +45,41 @@ img {
   --secondary-font: "Open Sans", sans-serif;
   --shadow: rgba(0, 0, 0, 0.75);
   --verde: #7ac943;
+  --outline-verde: #9fff5c;
 }
 
-body {
+body,
+header,
+section {
   align-items: center;
   background-color: var(--gris-medio);
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.skip-link {
+  height: 0;
+  outline: none;
+}
+
+.skip-link:focus,
+.skip-link:active {
+  outline: 3px solid var(--outline-verde);
+  height: auto;
+  padding: 8px;
+  margin: 16px 0 8px;
+  border-radius: 5px;
+  font-family: var(--secondary-font);
+  text-decoration: none;
+  background: var(--verde);
+  color: var(--gris-oscuro);
 }
 
 .header {
   color: var(--blanco);
   font-family: var(--main-font);
-  font-size: 55px;
+  font-size: 40px;
   margin-top: 16px;
 }
 
@@ -68,13 +90,17 @@ body {
 }
 
 .header-img {
-  background: center / contain no-repeat url(./images/juliana.jpeg);
   border-radius: 50%;
   border: 1px solid var(--gris-oscuro);
   box-shadow: 8px 16px 32px 0px var(--shadow);
   height: 300px;
   margin-top: 80px;
   width: 300px;
+  object-fit: cover;
+}
+
+nav {
+  width: 100%;
 }
 
 .navigation {
@@ -82,27 +108,53 @@ body {
   cursor: pointer;
   display: flex;
   justify-content: space-around;
-  margin: 24px 0;
+  margin: 24px auto;
   width: 50%;
 }
 
-.nav-item {
-  align-items: center;
-  border-radius: 5px;
-  display: flex;
-  font-family: var(--secondary-font);
-  height: 30px;
-  justify-content: center;
-  width: 33%;
+.nav-item a{
+  outline: none;
 }
 
-.nav-item:hover {
+.nav-item a:focus{
+  outline: 3px solid var(--outline-verde);
+  padding: auto 8px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 33%;
+  border-radius: 5px;
+  font-family: var(--secondary-font);
+}
+.nav-item:focus-within{
   background-color: var(--verde);
 }
 
+.nav-item a {
+  text-decoration: none;
+  color: var(--blanco);
+}
+
+.nav-item:hover,
+.nav-item:hover a {
+  cursor: pointer;
+  background-color: var(--verde);
+  color: var(--gris-oscuro);
+}
+
+.nav-item:focus{
+  outline: none;
+  color: var(--gris-oscuro)
+
+}
+
 .intro {
-  margin: 0 196px;
+  margin: 24px 196px 0;
   font-family: var(--secondary-font);
+  color: var(--blanco);
 }
 
 .social-media {
@@ -113,6 +165,28 @@ body {
   width: 20%;
 }
 
+.social-media li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--blanco);
+  font-family: var(--secondary-font);
+  text-decoration: none;
+}
+
+.social-media li a:focus{
+  outline: none;
+}
+
+.social-media li:focus-within{
+  outline:  3px solid var(--verde);
+  padding: 8px;
+}
+.social-link-text {
+  padding: 8px 8px;
+  margin: 3px auto;
+}
+
 .carousel {
   align-items: center;
   display: flex;
@@ -121,7 +195,8 @@ body {
 
 .window {
   overflow: hidden;
-  width: 805px;
+  width: 815px;
+  padding: 8px;
 }
 
 .project-container {
@@ -130,7 +205,29 @@ body {
   width: 1500px;
 }
 
-.project {
+.project-container li {
+  display: inline-block;
+}
+
+.project-container button {
+  outline: none;
+  background: none;
+  border: none;
+  padding: 0;
+}
+button{
+  outline: none;
+}
+button:focus{
+outline: 3px solid var(--outline-verde);
+padding: 8px;
+}
+
+.project-container button:focus-within{
+  outline: 3px solid var(--verde) ;
+}
+
+.project-img {
   border-radius: 5px;
   border: 2px solid #000;
   display: inline-block;
@@ -138,6 +235,7 @@ body {
   margin: 0 8px;
   transition: all 0.2s ease-in-out;
   width: 250px;
+  object-fit: cover;
 }
 
 .project:hover {
@@ -145,34 +243,18 @@ body {
   transform: scale(1.1);
 }
 
-.project1 {
-  background: center / cover no-repeat url(./images/project1.png);
-}
-
-.project2 {
-  background: center / cover no-repeat url(./images/project2.png);
-}
-
-.project3 {
-  background: center / cover no-repeat url(./images/project3.png);
-}
-
-.project4 {
-  background: center / cover no-repeat url(./images/project4.png);
-}
-
-.project5 {
-  background: center / cover no-repeat url(./images/project5.png);
-}
-
 .arrow {
-  height: 75px;
+  height: 35px;
   transition: all 0.2s ease-in-out;
-  width: 75px;
+  width: 35px;
 }
 
 .arrow:hover {
   transform: scale(1.1);
+}
+
+.arrow:focus{
+  outline: 3px solid var(--verde);
 }
 
 .arrow-left {
@@ -197,32 +279,56 @@ body {
 
 .form-container {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 30%;
 }
 
-.message-input input {
+input {
+  outline:none;
+  width: 100%;
+}
+input:focus{
+    outline: 3px solid var(--verde);
+  padding: 8px;
+}
+.input {
+  height: 40px;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.message-input {
   height: 150px;
   margin-bottom: 16px;
 }
 
-input {
-  outline: none;
+.send-button,
+.modal-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
   width: 100%;
+  font-size: 16px;
+  font-family: var(--secondary-font);
+  color: var(--gris-oscuro);
+  background-color: var(--verde);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.send-button:focus,
+.modal-button:focus{
+  padding: 8px;
+  border: 5px solid var(--outline-verde);
+  outline: 3px solid var(--verde);
 }
 
-.send-button {
-  align-items: center;
-  background-color: var(--verde);
-  border-radius: 5px;
-  color: white;
+#name-error{
+  color: var(--blanco);
   font-family: var(--secondary-font);
-  display: flex;
-  height: 50px;
-  justify-content: center;
-  margin-bottom: 48px;
-  width: 150px;
-  margin-left: auto;
 }
 
 .notification {
@@ -230,7 +336,7 @@ input {
   background-color: var(--verde);
   border-radius: 5px;
   box-shadow: 8px 16px 32px 0px var(--shadow);
-  color: var(--blanco);
+  color: var(--gris-oscuro);
   display: none;
   font-family: var(--secondary-font);
   height: 50px;
@@ -251,18 +357,23 @@ input {
   width: 100vw;
 }
 
+#modal-header{
+  outline: 3px solid var(--verde);
+  padding: 8px;
+}
 .modal {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
   align-items: center;
-  background-color: var(--gris-oscuro);
+  justify-content: center;
+  width: 600px;
+  height: 600px;
+  top: 8%;
+  padding: 56px;
   border-radius: 5px;
   border: 2px solid #000;
-  display: flex;
-  flex-direction: column;
-  height: 700px;
-  justify-content: center;
-  position: fixed;
-  top: 15%;
-  width: 700px;
+  background-color: var(--gris-oscuro);
 }
 
 .modal-project-image {

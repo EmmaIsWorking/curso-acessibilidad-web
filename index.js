@@ -3,11 +3,12 @@ window.onload = () => {
   document.querySelector(".arrow-left").addEventListener("click", clickLeft);
   document
     .querySelector(".send-button")
-    .addEventListener("click", showNotification);
+    .addEventListener("click", e => validateForm(e));
   document.querySelectorAll(".project").forEach(element => {
     element.addEventListener("click", e => openModal(e));
   });
   document.body.addEventListener("click", e => closeModal(e));
+  document.body.addEventListener("keyup", e => listenForEsc(e));
 };
 
 /** Esta funcion se llama cuando la persona hace click en la fecha derecha del carousel para navegar a la derecha */
@@ -21,6 +22,22 @@ function clickRight() {
   }
   let newValue = currentLeft - 270; //270 toma en cuenta el tamaño de la imagen mas sus margines
   document.querySelector(".project-container").style.left = `${newValue}px`;
+  switch(newValue){
+    case -270:
+      document.querySelector('.project1').setAttribute("tabindex", "-1");
+      document.querySelector('.project1-container').setAttribute("aria-hidden", true);
+      document.querySelector('.project4').removeAttribute("tabindex");
+      document.querySelector(".project4-container").removeAttribute("aria-hinden");
+      break;
+    case -540:
+      document.querySelector('.project2').setAttribute("tabindex", "-1");
+      document.querySelector('.project2-container').setAttribute("aria-hidden", true);
+      document.querySelector('.project5').removeAttribute("tabindex");
+      document.querySelector(".project5-container").removeAttribute("aria-hinden");
+      break;
+    default:
+      break;
+  };
 }
 
 /** Esta funcion se llama cuando la persona hace click en la fecha izquierda del carousel para navegar a la izquierda */
@@ -34,19 +51,55 @@ function clickLeft() {
   }
   let newValue = currentLeft + 270;
   document.querySelector(".project-container").style.left = `${newValue}px`;
+  switch (newValue) {
+    case -270:
+      document.querySelector('.project5').setAttribute("tabindex", "-1");
+      document.querySelector('.project5-container').setAttribute("area-hidden", "true");
+      document.querySelector('.project2').removeAttribute("tabindex");
+      document.querySelector('.project2-container').removeAttribute("area-hidden");
+      break;
+    case 0:
+      document.querySelector('.project4').setAttribute("tabindex", "-1");
+      document.querySelector('.project4-container').setAttribute("area-hidden", "true");
+      document.querySelector('.project1').removeAttribute("tabindex");
+      document.querySelector('.project1-container').removeAttribute("area-hidden");
+      break;
+    default:
+      break;
+  };
 }
 
+// validar el formulario antes de mostrar la notificacion
+function validateForm(e) {
+  e.preventDefault();
+  const nameField = document.getElementById("name");
+  if (nameField.value === "") {
+    document.getElementById("name-error").innerHTML = "Es necesario un nombre";
+  } else {
+    showNotification();
+  }
+}
 /** Esta funcion se llama cuando la persona hace click en el boton de enviar del formulario de contacto */
 function showNotification() {
+  document.getElementById("name-error").innerHTML = "";
+  document.querySelector('.form-container').reset();
   document.querySelector(".notification").style.display = "flex";
-  setTimeout(function() {
+  document.querySelector(".notification").innerHTML = "El formulario fue enviado sin errores";
+  setTimeout(function () {
     document.querySelector(".notification").style.display = "none";
   }, 3000);
 }
 
+// Esta escucha por la clave Esc para cerrar el modal
+function listenForEsc(e){
+  if(e.keyCode === 27){
+    closeModal(e);
+  }
+}
 /** Esta funcion se llama cuando la persona hace click en cualquier porjecto del carousel */
 function openModal(e) {
   document.querySelector(".modal-container").style.display = "flex";
+  document.getElementById('modal-header').focus();
 }
 
 /** Esta funcion se llama para cerrar el modal */

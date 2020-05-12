@@ -1,0 +1,25 @@
+{
+  "name": "curso-acessibilidad-web",
+  "version": "1.0.0",
+  "description": "Accebilidad web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmmaIsWorking/curso-acessibilidad-web.git"
+  },
+  "keywords": [
+    "accebilidad",
+    "javascript",
+    "css",
+    "html"
+  ],
+  "author": "Emmanuel García <dimple.pleod@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EmmaIsWorking/curso-acessibilidad-web/issues"
+  },
+  "homepage": "https://github.com/EmmaIsWorking/curso-acessibilidad-web#readme"
+}
