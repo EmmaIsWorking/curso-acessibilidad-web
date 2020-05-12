@@ -30,7 +30,8 @@ https://gmzjuliana.github.io/curso-acessibilidad-web/final.html
   - [Referencias](#referencias)
 
 ## Preview
-Implementa mejoras de accesibilidad web a tu portafolio. Usa HTML Semántico, CSS y JavaScript para lograrlo. Aprende las mejores técnicas para realizar pruebas y verificar que tu sitio cumpla con los estándares de accesibilidad.
+![preview](images/preview.png)
+![preview](images/audit.png))
 
 ## Intalaciones:
 [NoCoffee](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl)
