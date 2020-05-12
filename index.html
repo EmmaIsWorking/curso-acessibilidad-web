@@ -13,20 +13,20 @@
   <a href="#main" class="skip-link">saltar</a>
   <!-- HEADER -->
   <header>
-    <img src="./images/emmanuel.png" alt="Emmanuel García" class="header-img" />
+    <img src="images/emmanuel.png" alt="Emmanuel García" class="header-img" />
     <h1 class="header">Emmanuel García</h1>
     <h2 class="subtitle">Front End Developer</h2>
     <nav>
       <ul class="navigation">
-        <li class="nav-item"><a href="/acerca-de">Acerca de</a></li>
-        <li class="nav-item"><a href="/mis-proyectos">Mis Proyectos</a></li>
-        <li class="nav-item"><a href="/Contacto">Contacto</a></li>
+        <li class="nav-item"><a href="#acerca-de">Acerca de</a></li>
+        <li class="nav-item"><a href="#mis-proyectos">Mis Proyectos</a></li>
+        <li class="nav-item"><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
-    <section>
+    <section id="acerca-de">
       <h2 class="header">Acerca de</h2>
       <p class="intro">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, porro doloribus, non in facilis illo
@@ -55,18 +55,18 @@
         </li>
       </ul>
     </section>
-    <section>
+    <section id="mis-proyectos">
       <h2 class="header">Mis Proyectos</h2>
       <div class="carousel">
         <button class="arrow arrow-left" aria-label="boton regreso"></button>
         <div class="window">
           <ul class="project-container">
-            <li class="project1-container"><button class="project1 project"><img src="/images/project1.png"  alt="Mi proyecto1" class="project-img"></button></li>
-            <li class="project2-container"><button class="project2 project"><img src="/images/project2.png"  alt="Mi proyecto2" class="project-img"></button></li>
-            <li class="project3-container"><button class="project3 project"><img src="/images/project3.png"  alt="Mi proyecto3" class="project-img"></button></li>
-            <li class="project4-container" area-hidden="true"><button class="project4 project" tabindex="-1"><img src="/images/project4.png"
+            <li class="project1-container"><button class="project1 project"><img src="images/project1.png"  alt="Mi proyecto1" class="project-img"></button></li>
+            <li class="project2-container"><button class="project2 project"><img src="images/project2.png"  alt="Mi proyecto2" class="project-img"></button></li>
+            <li class="project3-container"><button class="project3 project"><img src="images/project3.png"  alt="Mi proyecto3" class="project-img"></button></li>
+            <li class="project4-container" area-hidden="true"><button class="project4 project" tabindex="-1"><img src="images/project4.png"
                   alt="Mi proyecto4" class="project-img"></button></li>
-            <li class="project5-container" area-hidden="true"><button class="project5 project" tabindex="-1"><img src="/images/project5.png"
+            <li class="project5-container" area-hidden="true"><button class="project5 project" tabindex="-1"><img src="images/project5.png"
                   alt="Mi proyecto5" class="project-img"></button></li>
           </ul>
         </div>
@@ -75,7 +75,7 @@
     </section>
   </main>
 
-  <footer class="contact-section">
+  <footer id="contacto" class="contact-section">
     <h2 class="header">Contacto</h2>
     <p class="intro">Enviamé un mensaje</p>
     <form class="form-container">
@@ -94,7 +94,7 @@
   <div class="modal-container">
     <div class="modal">
       <h2 class="header" id="modal-header" tabindex="0">Ejemplo de un proyecto mio</h2>
-      <img src="/images/project1.png" alt="proyecto 1" class="modal-project-image" />
+      <img src="images/project1.png" alt="proyecto 1" class="modal-project-image" />
       <button class="modal-button">Cerrar</button>
     </div>
   </div>
