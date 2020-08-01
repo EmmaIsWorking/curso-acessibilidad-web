@@ -1,3 +1,8 @@
+![https://emmaisworking.dev/static/images/GitHubCover.png](https://emmaisworking.dev/static/images/GitHubCover.png)
+
+<a href="https://twitter.com/emmaisworking" alt="my twitter link"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/emmaisworking?style=social"></a>
+<a href="https://github.com/emmaisworking" alt="my twitter link"><img alt="GitHub followers" src="https://img.shields.io/github/followers/emmaisworking?style=social"></a>
+
 # Curso de Accesibilidad Web
 
 En este curso, mejoraremos la accesibilidad un portafolio personal. Espero que aprendas mucho y que uses lo que aprendas aqui para implementar
